@@ -16,6 +16,8 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 
+import java.net.MalformedURLException;
+
 /**
  * Unit test for simple App.
  */
@@ -25,8 +27,7 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
-    {
+    public void shouldAnswerWithTrue() throws MalformedURLException {
         System.err.println("starting at " + new java.util.Date());
         //try { Thread.sleep(10 * 1000); } catch(Exception e) {}
 
@@ -55,7 +56,7 @@ public class AppTest
         System.err.println(url);
         System.err.println("triggering lambdatest test at " + new java.util.Date());
 
-        try {
+     //   try {
         RemoteWebDriver driver = new RemoteWebDriver(new java.net.URL(url), capabilities);
         System.err.println(driver);
 
@@ -68,9 +69,9 @@ public class AppTest
 
         driver.get("https://lambdatest.com/");
         driver.quit();
-        } catch (Exception e) {
-          System.err.println("failed: " + e);
-        }
+    //    } catch (Exception e) {
+
+     //   }
         System.err.println("ending at " + new java.util.Date());
 
         assertTrue( true );
